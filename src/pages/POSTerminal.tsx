@@ -82,14 +82,14 @@ const POSTerminal = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 overflow-y-auto pr-2 custom-scrollbar flex-1 pb-10 content-start">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-6 overflow-y-auto pr-2 custom-scrollbar flex-1 pb-10 content-start">
           {filteredProducts.map(product => (
             <div
               key={product.id}
               onClick={() => addToCart(product)}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-zinc-100 hover:border-brand-teal/30 hover:shadow-xl hover:shadow-brand-teal/5 transition-all cursor-pointer group active:scale-[0.97] flex flex-col h-[320px] md:h-[350px]"
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-zinc-100 hover:border-brand-teal/30 hover:shadow-xl hover:shadow-brand-teal/5 transition-all cursor-pointer group active:scale-[0.97] flex flex-col h-[300px] md:h-[340px]"
             >
-              <div className="relative h-1/2 overflow-hidden flex-shrink-0">
+              <div className="relative h-32 md:h-40 lg:h-48 overflow-hidden flex-shrink-0">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 {product.isBestSeller && (
                   <div className="absolute top-3 left-3 bg-brand-green/90 backdrop-blur-md px-3 py-1 rounded-full text-white font-black text-[9px] uppercase tracking-wider z-10 shadow-lg">
@@ -97,18 +97,18 @@ const POSTerminal = () => {
                   </div>
                 )}
               </div>
-              <div className="p-4 flex flex-col flex-grow">
-                <div className="h-[2.8rem] flex items-start mb-1">
+              <div className="p-4 flex flex-col flex-grow min-h-0">
+                <div className="h-[2.8rem] flex items-start mb-1 overflow-hidden">
                   <h3 className="font-bold text-zinc-800 text-[13px] md:text-[14px] leading-tight line-clamp-2 uppercase group-hover:text-brand-teal transition-colors tracking-tight">{product.name}</h3>
                 </div>
-                <div className="h-[1.2rem] flex items-center mb-4">
+                <div className="h-[1.2rem] flex items-center mb-2 overflow-hidden">
                   <p className="text-zinc-400 text-[10px] line-clamp-1 font-medium italic">{product.description}</p>
                 </div>
                 <div className="mt-auto pt-3 border-t border-zinc-50 flex justify-between items-center group-hover:border-brand-teal/10 transition-colors">
                   <span className="font-black text-brand-green text-sm md:text-base">
                     {formatCurrency(product.price)}
                   </span>
-                  <div className="w-9 h-9 rounded-2xl bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-teal group-hover:rotate-90 transition-all duration-300">
+                  <div className="w-8 h-8 md:w-9 md:h-9 rounded-2xl bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-teal group-hover:rotate-90 transition-all duration-300">
                     <Plus size={18} />
                   </div>
                 </div>
