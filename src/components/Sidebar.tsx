@@ -32,6 +32,7 @@ const Sidebar = () => {
     { icon: LayoutDashboard, label: 'Dashboard', path: '/', roles: ['BRANCH_MANAGER', 'OPERATIONS_MANAGER', 'ADMIN'] },
     { icon: Calendar, label: 'Quản lý ca', path: '/shifts', roles: ['BRANCH_MANAGER', 'ADMIN'] },
     { icon: Package, label: 'Kho hàng', path: '/inventory', roles: ['BRANCH_MANAGER', 'STAFF', 'ADMIN'] },
+    { icon: Users, label: 'Nhà cung cấp', path: '/suppliers', roles: ['ADMIN', 'BRANCH_MANAGER', 'OPERATIONS_MANAGER'] },
     { icon: BookOpen, label: 'Recipe/Công thức', path: '/recipe', roles: ['ADMIN', 'BRANCH_MANAGER', 'STAFF'] },
     { icon: Users, label: 'CRM Khách hàng', path: '/crm', roles: ['ADMIN', 'BRANCH_MANAGER', 'OPERATIONS_MANAGER'] },
     { icon: BarChart3, label: 'Báo cáo', path: '/analytics', roles: ['ADMIN', 'BRANCH_MANAGER', 'OPERATIONS_MANAGER'] },

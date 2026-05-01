@@ -15,6 +15,7 @@ import Recipes from './pages/Recipes';
 import Settings from './pages/Settings';
 import Shifts from './pages/Shifts';
 import AuditLog from './pages/AuditLog';
+import Suppliers from './pages/Suppliers';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/recipe" element={<ProtectedRoute><Recipes /></ProtectedRoute>} />
           <Route path="/shifts" element={<ProtectedRoute><Shifts /></ProtectedRoute>} />
           <Route path="/audit" element={<ProtectedRoute><AuditLog /></ProtectedRoute>} />
+          <Route path="/suppliers" element={<ProtectedRoute><Suppliers /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
           
           <Route path="*" element={<ProtectedRoute>
