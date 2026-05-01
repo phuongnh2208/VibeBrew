@@ -12,7 +12,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(MOCK_USERS[1]); // Default to Branch Manager for demo
+  const [user, setUser] = useState<User | null>(null);
 
   const login = (email: string) => {
     const foundUser = MOCK_USERS.find(u => u.email === email);

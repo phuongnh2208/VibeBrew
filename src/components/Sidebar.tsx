@@ -29,7 +29,7 @@ const Sidebar = () => {
   const menuItems = [
     { icon: CreditCard, label: 'Bán hàng (POS)', path: '/pos', roles: ['STAFF', 'BRANCH_MANAGER'] },
     { icon: History, label: 'Lịch sử đơn', path: '/history', roles: ['STAFF', 'BRANCH_MANAGER'] },
-    { icon: LayoutDashboard, label: 'Dashboard', path: '/', roles: ['BRANCH_MANAGER', 'OPERATIONS_MANAGER', 'ADMIN'] },
+    { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard', roles: ['BRANCH_MANAGER', 'OPERATIONS_MANAGER', 'ADMIN'] },
     { icon: Calendar, label: 'Quản lý ca', path: '/shifts', roles: ['BRANCH_MANAGER', 'ADMIN'] },
     { icon: Package, label: 'Kho hàng', path: '/inventory', roles: ['BRANCH_MANAGER', 'STAFF', 'ADMIN'] },
     { icon: Users, label: 'Nhà cung cấp', path: '/suppliers', roles: ['ADMIN', 'BRANCH_MANAGER', 'OPERATIONS_MANAGER'] },

@@ -25,9 +25,11 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
 const HomeRedirect = () => {
   const { user } = useAuth();
-  if (!user) return <Navigate to="/login" replace />;
-  if (user.role === 'STAFF') return <Navigate to="/pos" replace />;
-  return <Dashboard />;
+  if (user) {
+    if (user.role === 'STAFF') return <Navigate to="/pos" replace />;
+    return <Navigate to="/dashboard" replace />;
+  }
+  return <Navigate to="/login" replace />;
 };
 
 export default function App() {
@@ -36,8 +38,8 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          
-          <Route path="/" element={<ProtectedRoute><HomeRedirect /></ProtectedRoute>} />
+          <Route path="/" element={<HomeRedirect />} />
+          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/pos" element={<ProtectedRoute><POSTerminal /></ProtectedRoute>} />
           <Route path="/checkout" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
           <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />

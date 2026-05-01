@@ -15,7 +15,7 @@ const Login = () => {
       if (user.role === 'STAFF') {
         navigate('/pos');
       } else {
-        navigate('/');
+        navigate('/dashboard');
       }
     }
   }, [user, navigate]);
